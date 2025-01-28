@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'Play';
+  src: url('./fonts/Play-Regular.woff2') format('woff2'),
+       url('./fonts/Play-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Play';
+  src: url('./fonts/Play-Bold.woff2') format('woff2'),
+       url('./fonts/Play-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./fonts/OpenSans-Regular.woff2') format('woff2'),
+       url('./fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./fonts/OpenSans-Bold.woff2') format('woff2'),
+       url('./fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Цветовые переменные */
+:root {
+  --background-white: #fff;
+  --background-black: #0a0b0b;
+  --background-black-disabled: #747474;
+  --background-brand-disabled: #d6d2f1;
+  --content-secondary: rgba(255, 255, 255, 0.7);
+  --background-brand-hovered: #8577e1;
+  --content-placeholder: rgba(0, 0, 0, 0.4);
+  --content-active: #b4a9ff;
+  --background-brand-active: #6a5dc2;
+  --content-black: #000;
+  --background-secondary: #393b3c;
+  --background-disabled: rgba(255, 255, 255, 0.5);
+  --content-disabled: rgba(255, 255, 255, 0.5);
+  --content-primary: #fff;
+  --content-error: #ff7575;
+
+  /* Шрифты */
+  --font-family: "Play", sans-serif;
+  --second-family: "Open Sans", sans-serif;
+}
+
+/* Применение общих стилей */
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-black);
+  color: var(--content-primary);
+  max-width: 1440px;
+  min-width: 375px;
+}
+
+.container {
+  padding: 0 80px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+

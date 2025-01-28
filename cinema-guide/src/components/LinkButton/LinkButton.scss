@@ -1,0 +1,41 @@
+.link__button {
+  padding: 3px;
+  background: var(--background-black);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  width: 36px;
+  height: 36px;
+  text-align: center;
+
+  &:hover {
+    filter: invert(100%);
+  }
+}
+
+@media (max-width: 650px) {
+  .link__button {
+    padding-bottom: 5px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .button__vk svg {
+    width: 13px;
+    height: 7px;
+  }
+
+  .button__youtube svg {
+    width: 12px;
+    height: 8px;
+  }
+
+  .button__ok svg {
+    width: 7px;
+    height: 11px;
+  }
+
+  .button__telegramm svg {
+    width: 12px;
+    height: 10px;
+  }
+}

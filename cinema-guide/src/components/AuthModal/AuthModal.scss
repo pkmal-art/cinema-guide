@@ -1,0 +1,58 @@
+.button__login {
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--background-white);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; 
+    left: 0;
+    width: 0;
+    height: 1.0px;
+    background-color: #dc5dfc;    
+  }
+
+  &.active::after,
+  &:hover::after {
+    width: 100%;
+  }
+} 
+
+.button__icon {
+  display: none;
+}
+
+.button__text {
+  display: inline;
+}
+
+@media (max-width: 1030px) {  
+  .button__login { 
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  .button__icon {
+    display: block;    
+  }
+
+  .button__text {
+    display: none; 
+  }
+
+  .button__login {
+    padding: 0;
+  }
+}
+
+ 

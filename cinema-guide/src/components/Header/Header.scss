@@ -1,0 +1,182 @@
+.header__container {
+  padding: 26px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__container a {
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--background-white);  
+} 
+
+
+.navigation__item--genres,
+.navigation__item--home {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; 
+    left: 0;
+    width: 0;
+    height: 1.0px;
+    background-color: #dc5dfc;    
+  }
+
+  &.active::after,
+  &:hover::after {
+    width: 100%; 
+  } 
+}
+
+
+.search__movies--icon {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; 
+    left: 0;
+    width: 0;
+    height: 1.0px;
+    background-color: #dc5dfc;    
+  }
+
+  &.active::after,
+  &:hover::after {
+    width: 100%; 
+  }
+}
+
+.header__logo {
+  margin-right: 10px;
+}
+
+.header__logo a {
+  border-bottom: none;
+}
+
+.header__logo a:hover {
+  border-bottom: none; 
+}
+
+.header__center {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  margin-right: 40px;
+  
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }   
+}
+
+.header__search {
+  margin: 0;
+  margin-right: 3px;
+  padding: 0;
+}
+
+.genres__icon {
+  display: none;
+}
+
+.search__movies--icon {
+  display: none;
+}
+
+
+@media (max-width: 1230px) {
+  .navigation {
+    margin-right: 20px;
+
+    ul {
+      gap: 20px;
+    } 
+  }
+}
+
+
+@media (max-width: 1030px) {
+  
+  .header__logo {
+    margin-right: 0;
+  }
+
+  .header__logo img{
+    width: 136px;
+    height: 18px;
+  }
+
+  a { 
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .navigation__item--home {
+    display: none;
+  }
+
+  .navigation__item--genres {
+    display: flex;
+    align-items: center;
+  }
+
+  .genres__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  .genres__text {
+    display: none;
+  }
+
+  .header__container {
+    justify-content: space-between; 
+  }
+
+  .header__logo {
+    margin-right: auto; 
+  }
+
+  .header__center
+   {
+    margin-left: auto; 
+  }
+
+  .header__login {
+    margin-left: 20px;
+  }
+
+  .search__container {
+    display: none;
+  }
+
+  .search__movies--icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 650px) {
+  .header__container {
+    padding: 16px 20px;
+  }
+}

@@ -1,0 +1,50 @@
+import React, { useState, useEffect } from "react";
+import './ModalMovie.scss';
+
+type ModalMovieProps = {
+  isOpenModalMovie: boolean;
+  onCloseModalMovie: () => void;
+  videoUrl: string;
+};
+
+const ModalMovie: React.FC<ModalMovieProps> = ({ isOpenModalMovie, onCloseModalMovie, videoUrl }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, [isOpenModalMovie]);
+
+ 
+  const handleVideoLoaded = () => {
+    setIsLoading(false); 
+  };
+
+  if (!isOpenModalMovie) return null;
+
+  return (
+    <div className="modalMovie__overlay" onClick={onCloseModalMovie}>
+      <div className="modalMovie" onClick={(e) => e.stopPropagation()}>
+        <button className="modalMovie__close" onClick={onCloseModalMovie}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z" fill="black" />
+          </svg>
+        </button>
+        <div className="modalMovie__play">
+         
+          {isLoading && (
+            <img src="/loader.svg" alt="Loading..." className="modalMovie__loader" />
+          )}
+          <iframe
+            src={`${videoUrl}?autoplay=1`}
+            title="Trailer Video"
+            onLoad={handleVideoLoaded}
+            allow="autoplay; encrypted-media"
+            className={`modalMovie__video ${isLoading ? 'hidden' : ''}`} 
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ModalMovie;

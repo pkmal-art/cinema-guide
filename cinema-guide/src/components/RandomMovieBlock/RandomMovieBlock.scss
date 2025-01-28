@@ -1,0 +1,252 @@
+.randomMovie__container {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  position: relative;
+  // width: 1440px; /* Ширина всего блока */
+  height: 611px; /* Высота всего блока */
+  display: flex;
+  background-color: var(--background-black);
+}
+
+.randomMovie__description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px; /* Фиксированная ширина блока описания */
+  height: 100%;
+  padding: 0;
+  z-index: 3; /* Поверх изображения */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.randomMovie__img {
+  position: absolute;
+  top: 0;
+  left: 32%;
+  width: 900px; /* Фиксированная ширина изображения */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(10, 11, 11, 1) 0%, rgba(10, 11, 11, 0.5) 30%, rgba(10, 11, 11, 0) 50%);
+    z-index: 2;
+  }
+}
+
+.randomMovie__info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.randomMovie__info--rating {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  text-align: center;
+  width: 70px;
+  height: 32px;
+  background: #308e21;
+}
+
+.randomMovie__info--rating  svg{
+  margin-right: 4px;
+}
+
+.randomMovie__info--year,
+.randomMovie__info--genre,
+.randomMovie__info--runtime {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--content-secondary);
+}
+
+
+.randomMovie__description--title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 117%;
+  color: var(--content-primary);
+}
+
+.randomMovie__description--plot {
+  margin: 0;
+  margin-bottom: 44px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--content-secondary);
+}
+
+.randomMovie__description--actions{
+  display: flex;
+  gap: 16px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.no-underline:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 1366px) {
+  .randomMovie__img {
+    width: 818px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .randomMovie__container {
+    height: 500px;
+  }
+  .randomMovie__img {
+    width: 768px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .randomMovie__description {
+    width: 550px;
+  }
+
+  .randomMovie__img {
+    width: 640px;
+  }
+
+}
+
+@media (max-width: 992px) { 
+  .randomMovie__description {
+    width: 450px;
+  }
+
+  .randomMovie__description--title {
+    font-size: 44px;
+    line-height: 117%;
+  }
+
+  .randomMovie__description--plot {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 133%;
+  }
+
+  .randomMovie__container {
+    height: 430px;
+  }
+
+  .actions__about--button {
+    padding: 16px 30px;
+    width: 167px;
+  }
+}
+
+@media (max-width: 892px) { 
+  .randomMovie__container {
+    height: 380px;
+  }
+
+  .randomMovie__img {
+    width: 500px;
+  }
+
+  .randomMovie__description--title {
+    font-size: 40px;
+    line-height: 117%;
+  }
+
+  .randomMovie__description--plot {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 133%;
+  }
+
+}
+@media (max-width: 650px) { 
+  .randomMovie__img {
+    width: 420px;
+}
+}
+
+@media (max-width: 550px) { 
+  .randomMovie__container {
+    margin-bottom: 60px;
+    height: 100%;
+    flex-direction: column;
+  }
+  .randomMovie__description {
+    position: static;
+    width: 100%;
+    z-index: 3;
+    order: 1;
+  }
+  .randomMovie__img {
+    margin-bottom: 24px;
+    position: static;
+    width: 100%;
+    height: 260px;
+    order: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to left, rgba(10, 11, 11, 1) 0%, rgba(10, 11, 11, 0.5) 30%, rgba(10, 11, 11, 0) 50%);
+      z-index: 2;
+    }
+  }
+
+.randomMovie__info--year,
+.randomMovie__info--genre,
+.randomMovie__info--runtime {
+  font-size: 14px; 
+  }
+
+  .randomMovie__description--title {
+    font-size: 24px; 
+  }
+
+  .randomMovie__description--plot {
+    font-size: 18px; 
+  }
+
+  .randomMovie__description--actions {
+    
+    flex-wrap: wrap;     
+  }
+
+  .actions__trailer {
+    flex: 1 1 100%;  
+  }
+
+  .actions__trailer--button {
+    width: 100%;
+  }  
+
+}

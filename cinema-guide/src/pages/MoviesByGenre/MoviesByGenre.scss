@@ -1,0 +1,72 @@
+.moviesByGenre {
+  padding: 0;
+  padding: 64px 0 160px 0 ;
+  margin: 0;
+}
+
+.moviesByGenre__top {
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.moviesByGenre__top--button {
+  margin: 0;
+  margin-right: 15px;
+  padding-top: 10px;
+}
+
+.moviesByGenre__top--title {
+  margin: 0;
+}
+
+.moviesByGenre__title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 117%;
+  color: var(--content-primary);
+}
+
+.moviesByGenre__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 37px;
+}
+
+.moviesByGenre__list--item {
+  margin-bottom: 23px; 
+}
+
+@media (max-width: 780px) {
+  .moviesByGenre {
+    padding: 7px 0 26px 0 ;
+  }
+
+  .moviesByGenre__top {
+    margin-bottom: 33px;
+  }
+  
+  .moviesByGenre__title {
+    font-size: 24px;     
+  }
+
+  .moviesByGenre__top--button {
+    margin-right: 8px;
+  }
+
+  .moviesByGenre__top--button svg{
+    width: 32px;
+    height: 32px;
+  }
+
+}
+
+
+@media (max-width: 530px) { 
+  .moviesByGenre__list {
+    justify-content: center;   
+    gap: 0;  
+  }   
+}

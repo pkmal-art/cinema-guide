@@ -1,0 +1,75 @@
+.search__movie {
+  display: flex;
+}
+
+.search__movie--img {
+  margin: 0;
+  margin-right: 18px;
+  width: 40px;
+  height: 52px;
+}
+
+.search__movie--title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--content-primary);
+}
+
+.search__movie--info {
+  margin: 0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search__movie--rating {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  width: 47px;
+  height: 20px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--content-primary);
+  }
+
+.search__movie--rating svg{
+  margin-right: 3px;
+}
+
+.search__movie--year,
+.search__movie--genre,
+.search__movie--runtime {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: var(--content-secondary);
+}
+
+@media (max-width: 480px) {
+  .search__movie {
+    flex-direction: column;
+    width: 220px;
+    height: 330px;
+  }
+
+  .search__movie--img {
+    margin-bottom: 16px;
+    width: 158px;
+    height: 206px;
+  }
+
+  .search__movie--info {
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+}
