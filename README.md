@@ -1,64 +1,54 @@
-Example plain HTML site using GitLab Pages.
+Cinema Guide — это веб-приложение, предоставляющее информацию о фильмах, их рейтингах и других деталях.
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+# Описание проекта
 
----
+Cinema Guide позволяет пользователям:
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+Смотреть описание фильмов, их рейтинг, жанр, актеров, трейлер и страну производства.
 
-- [GitLab CI](#gitlab-ci)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Troubleshooting](#troubleshooting)
+Видеть на главной странице случайный фильм и топ-10 фильмов с самым высоким рейтингом.
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+Авторизоваться или зарегистрироваться для добавления фильмов в избранное.
 
-## GitLab CI
+## Запуск проекта
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
+1. Клонирование репозитория
 
-```
-image: busybox
+git clone <URL_репозитория>
+cd cinema-guide
 
-pages:
-  stage: deploy
-  script:
-  - echo 'Nothing to do...'
-  artifacts:
-    paths:
-    - public
-    expire_in: 1 day
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-```
+2. Установка зависимостей
 
-The above example expects to put all your HTML files in the `public/` directory.
+npm install
 
-## GitLab User or Group Pages
+3. Запуск проекта в режиме разработки
 
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
+npm start
 
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
+Проект будет запущен на http://localhost:3000/.
 
-## Did you fork this project?
+4. Сборка проекта для продакшена
 
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
+npm run build
 
-## Troubleshooting
+Собранный проект будет находиться в папке build/.
 
-1. CSS is missing! That means that you have wrongly set up the CSS URL in your
-   HTML files. Have a look at the [index.html] for an example.
+5. Запуск тестов
 
-[ci]: https://about.gitlab.com/gitlab-ci/
-[index.html]: https://gitlab.com/pages/plain-html/blob/master/public/index.html
-[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
-[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
+npm test
+
+### Стек технологий
+
+React — библиотека для создания пользовательских интерфейсов.
+
+Redux Toolkit — управление состоянием приложения.
+
+React Router — маршрутизация в приложении.
+
+Axios — работа с HTTP-запросами.
+
+Formik + Yup — управление формами и валидация.
+
+Sass — стилизация приложения.
+
+TypeScript — статическая типизация.
